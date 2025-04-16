@@ -1,37 +1,31 @@
 {
   "expo": {
-    "name": "earthnews",
-    "slug": "earthnews",
+    "name": "earth-explore-app",
+    "slug": "earth-explore-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/Earth-Explore.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.zhangfulin.earthnews"
-    },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
+    },
+    "splash": {
+      "backgroundColor": "#000000"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#000000"
         }
       ]
     ],
@@ -43,7 +37,14 @@
         "origin": false
       },
       "eas": {
-        "projectId": "584965af-a352-4564-be42-88d3a8b9f471"
+        "projectId": "136a043d-06b4-4dc6-81c1-a2d41173d469"
+      }
+    },
+    "owner": "zhangfulin",
+    "android": {
+      "package": "com.zhangfulin.earthexploreapp",
+      "adaptiveIcon": {
+        "backgroundColor": "#000000"
       }
     }
   }
