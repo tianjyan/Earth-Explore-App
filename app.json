@@ -16,14 +16,13 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "splash": {
-      "backgroundColor": "#000000"
-    },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
+          "image": "./assets/images/Earth-Explore.png",
+          "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#000000"
         }
