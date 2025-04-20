@@ -45,6 +45,10 @@
       "adaptiveIcon": {
         "backgroundColor": "#000000"
       }
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#000000",
+      "visible": "translucent"
     }
   }
 }
