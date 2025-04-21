@@ -17,6 +17,25 @@ export default function App() {
         androidHardwareAccelerationDisabled={false} 
         source={{ uri: 'https://Zhang-fulin.github.io/Earth-Explore' }}
         style={styles.webview}
+        scalesPageToFit={false}
+        injectedJavaScript={`
+          const meta = document.createElement('meta');
+          meta.name = 'viewport';
+          meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+          document.getElementsByTagName('head')[0].appendChild(meta);
+
+          document.addEventListener('gesturestart', e => e.preventDefault());
+          document.addEventListener('gesturechange', e => e.preventDefault());
+          document.addEventListener('gestureend', e => e.preventDefault());
+
+          document.addEventListener('touchmove', e => {
+            if (e.touches.length > 1) {
+              e.preventDefault();
+            }
+          }, { passive: false });
+
+          true;
+        `}
       />
     </SafeAreaView>
   );
