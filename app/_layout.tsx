@@ -24,6 +24,18 @@ export default function App() {
           meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
           document.getElementsByTagName('head')[0].appendChild(meta);
 
+          const style = document.createElement('style');
+          style.innerHTML = \`
+            * {
+              user-select: none;
+              -webkit-user-select: none;
+              outline: none;
+              -webkit-tap-highlight-color: transparent;
+            }
+          \`;
+          document.head.appendChild(style);
+
+          // 禁用手势缩放
           document.addEventListener('gesturestart', e => e.preventDefault());
           document.addEventListener('gesturechange', e => e.preventDefault());
           document.addEventListener('gestureend', e => e.preventDefault());
