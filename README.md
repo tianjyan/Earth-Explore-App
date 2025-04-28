@@ -1,52 +1,44 @@
-# Welcome to your Expo app 👋
+# Earth Explore App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+这是一个基于 **Expo** 和 **React Native** 开发的移动应用，通过 WebView 加载展示 [Earth Explore](https://zhang-fulin.github.io/Earth-Explore) 网站。
 
-## Get started
+## 技术栈
 
-1. Install dependencies
+- Expo
+- React Native
+- EAS (Expo Application Services)
+
+## 安装与运行
+
+1. 克隆项目：
+
+   ```bash
+   git clone https://your-repo-url.git
+   cd your-project-folder
+   ```
+
+2. 安装依赖：
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. 启动项目（开发调试）：
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. 构建应用（使用 EAS）：
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   npm install -g eas-cli
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   # Sign up for an Expo account.
+   # Run the following command in your terminal to log in to the EAS CLI:
+   eas login
 
-## Get a fresh project
+   eas build --platform android --profile development | preview
+   ```
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-
-eas build --platform android --profile development
+使用 Expo Go 扫码预览，或者使用 EAS 构建正式安装包
