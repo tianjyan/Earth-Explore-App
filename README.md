@@ -38,6 +38,8 @@
    # Run the following command in your terminal to log in to the EAS CLI:
    eas login
 
+   eas build:configure
+
    eas build --platform android --profile development | preview
    ```
 
