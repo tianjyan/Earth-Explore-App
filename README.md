@@ -40,7 +40,8 @@
 
    eas build:configure
 
-   eas build --platform android --profile development | preview
+   # development | preview 
+   eas build --platform android --profile development
    ```
 
 使用 Expo Go 扫码预览，或者使用 EAS 构建正式安装包
