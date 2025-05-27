@@ -1,0 +1,15 @@
+fastlane_version '2.227.0'
+
+before_all do
+  # ensure_git_branch
+  # ensure_git_status_clean
+  # git_pull
+end
+
+platform :android do
+  desc 'Build the Android application.'
+  lane :build do
+      gradle(task: 'clean', project_dir: 'android/')
+      gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+  end
+end
