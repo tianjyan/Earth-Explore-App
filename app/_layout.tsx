@@ -1,8 +1,23 @@
 import { SafeAreaView, StyleSheet, Platform, StatusBar as RNStatusBar, StatusBar } from 'react-native';
 import { WebView } from 'react-native-webview';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Asset } from 'expo-asset';
+import * as FileSystem from 'expo-file-system';
 
 export default function App() {
+const [htmlUri, setHtmlUri] = useState("");
+
+  useEffect(() => {
+    const loadHtml = async () => {
+      const asset = Asset.fromModule(require('./assets/html/index.html'));
+      await asset.downloadAsync(); // 确保已解压到本地
+      if (asset.localUri) { 
+        setHtmlUri(asset.localUri);
+      }
+    };
+    loadHtml();
+  }, []);
+
   useEffect(() => {
     if (Platform.OS === 'android') {
       RNStatusBar.setTranslucent(true);
@@ -15,7 +30,7 @@ export default function App() {
       <StatusBar hidden />
       <WebView
         androidHardwareAccelerationDisabled={false} 
-        source={{ uri: 'https://Zhang-fulin.github.io/Earth-Explore' }}
+        source={{ uri: htmlUri }}
         style={styles.webview}
         scalesPageToFit={false}
         injectedJavaScript={`
