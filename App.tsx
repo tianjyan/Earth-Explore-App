@@ -10,12 +10,23 @@ export default function App() {
     }
   }, []);
 
+  const getWebViewSource = () => {
+    if (Platform.OS === 'android') {
+      return { uri: 'file:///android_asset/dist/index.html' };
+    }
+    
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar hidden />
       <WebView
+        originWhitelist={['*']}
         androidHardwareAccelerationDisabled={false} 
-        source={{ uri: 'https://Zhang-fulin.github.io/Earth-Explore' }}
+        source={getWebViewSource()}
+        allowFileAccess={true}
+        allowUniversalAccessFromFileURLs={true}
+        allowingReadAccessToURL={'*'}
         style={styles.webview}
         scalesPageToFit={false}
         injectedJavaScript={`
