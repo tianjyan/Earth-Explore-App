@@ -36,10 +36,10 @@
         "origin": false
       },
       "eas": {
-        "projectId": "136a043d-06b4-4dc6-81c1-a2d41173d469"
+        "projectId": "68c82a0b-b3a9-4585-9e62-1236ac7d9c92"
       }
     },
-    "owner": "zhangfulin",
+    "owner": "earth-explore",
     "android": {
       "package": "com.zhangfulin.earthexploreapp",
       "adaptiveIcon": {
